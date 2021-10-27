@@ -10,7 +10,7 @@ public class WsClient : MonoBehaviour
     WebSocket ws;
     private void Start()
     {
-        ws = new WebSocket("ws://jbleau.dectim.ca:8084");   //Changer l'address et le port
+        ws = new WebSocket("ws://jbleau.dectim.ca:8081");   //Changer l'address et le port
         ws.Connect();
         ws.OnMessage += (sender, e) =>
         {
@@ -28,5 +28,6 @@ public class WsClient : MonoBehaviour
         {
             ws.Send("Hello");
         }
+        
     }
 }
