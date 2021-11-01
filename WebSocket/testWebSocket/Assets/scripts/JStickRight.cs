@@ -34,10 +34,11 @@ public class JStickRight : MonoBehaviour, IPointerDownHandler, IPointerClickHand
             Debug.Log("Space");
         }
 
-if(pointerDown == true)
-{
-    Camera.main.backgroundColor = new Color (Random.Range (0f, 1f), Random.Range(0f,1f), Random.Range(0f,1f));
-}
+        if(pointerDown == true)
+        {
+            ws.Send("Go Right");
+            Camera.main.backgroundColor = new Color (Random.Range (0f, 1f), Random.Range(0f,1f), Random.Range(0f,1f));
+        }
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -48,7 +49,6 @@ if(pointerDown == true)
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Dragging: Move stick");
-        ws.Send("Dragging: Move stick");
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -59,11 +59,10 @@ if(pointerDown == true)
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Clicked: " + eventData.pointerCurrentRaycast.gameObject.name);
-        ws.Send("Clicked: " + eventData.pointerCurrentRaycast.gameObject.name);
     }
 
-private bool pointerDown;
-public UnityEvent onHoldClick;
+    private bool pointerDown;
+    public UnityEvent onHoldClick;
 
     public void OnPointerDown(PointerEventData eventData)
     {
