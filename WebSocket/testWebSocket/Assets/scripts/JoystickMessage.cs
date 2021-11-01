@@ -69,8 +69,7 @@ public UnityEvent onHoldClick;
     {
         Camera.main.backgroundColor = new Color (Random.Range (0f, 1f), Random.Range(0f,1f), Random.Range(0f,1f));
         pointerDown = true;
-        Debug.Log("Mouse Down: " + eventData.pointerCurrentRaycast.gameObject.name);
-        Debug.Log(pointerDown);
+        Debug.Log("Go foward");
         ws.Send("Mouse Down: " + eventData.pointerCurrentRaycast.gameObject.name);
     }
 
