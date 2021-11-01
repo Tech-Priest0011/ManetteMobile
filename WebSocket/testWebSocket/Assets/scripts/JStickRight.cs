@@ -29,15 +29,9 @@ public class JStickRight : MonoBehaviour, IPointerDownHandler, IPointerClickHand
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Space");
-        }
-
         if(pointerDown == true)
         {
             ws.Send("Go Right");
-            Camera.main.backgroundColor = new Color (Random.Range (0f, 1f), Random.Range(0f,1f), Random.Range(0f,1f));
         }
     }
     public void OnBeginDrag(PointerEventData eventData)
@@ -66,7 +60,6 @@ public class JStickRight : MonoBehaviour, IPointerDownHandler, IPointerClickHand
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Camera.main.backgroundColor = new Color (Random.Range (0f, 1f), Random.Range(0f,1f), Random.Range(0f,1f));
         pointerDown = true;
         Debug.Log("Go right");
         ws.Send("Mouse Down: " + eventData.pointerCurrentRaycast.gameObject.name);

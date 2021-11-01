@@ -24,10 +24,18 @@ public class WsClient : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ws.Send("Hello");
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     ws.Send("Hello");
+        // }
         
+    }
+
+    public void EnvoieMesage(float x, float y)
+    {
+        Debug.Log("----------X: " + x);
+        Debug.Log("----------Y: " + y);
+
+        ws.Send(x + " , " + y);
     }
 }
