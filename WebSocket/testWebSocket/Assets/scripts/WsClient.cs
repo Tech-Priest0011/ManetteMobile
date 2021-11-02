@@ -3,14 +3,16 @@ using UnityEngine.UI;
 using WebSocketSharp;
 public class WsClient : MonoBehaviour
 {
+    public string address;
+    public string port; 
 
     [SerializeField]
     private Text laConsoleTexte;
-
+       
     WebSocket ws;
     private void Start()
     {
-        ws = new WebSocket("ws://jbleau.dectim.ca:8081");   //Changer l'address et le port
+        ws = new WebSocket("ws://" + address + ":" + port);   //Changer l'address et le port
         ws.Connect();
         ws.OnMessage += (sender, e) =>
         {

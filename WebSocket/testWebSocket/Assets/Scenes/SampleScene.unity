@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964128, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -174,7 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096fc145b5405bf4aa92aca5b4e7aa96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laConsoleTexte: {fileID: 0}
+  address: jbleau.dectim.ca
+  port: 8084
   onHoldClick:
     m_PersistentCalls:
       m_Calls: []
@@ -256,6 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02ea37b6767c2d4d9bc75fb61d64689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  address: jbleau.dectim.ca
+  port: 8084
   laConsoleTexte: {fileID: 0}
 --- !u!4 &307836706
 Transform:
@@ -371,53 +374,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19a1814fbee73944a22a638cad388fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laConsoleTexte: {fileID: 0}
+  address: jbleau.dectim.ca
+  port: 8084
   onHoldClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &607948599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 607948600}
-  - component: {fileID: 607948601}
-  m_Layer: 0
-  m_Name: Touche
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &607948600
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607948599}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 657, y: 274.64786, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &607948601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607948599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e8588dd83159c4cb6a1f290f3865ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,11 +504,11 @@ RectTransform:
   m_Father: {fileID: 2103792902}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.1, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 105.45, y: -41.77}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &706802838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,22 +954,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add282a272e3d1544aaef5c8fe1e982f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laConsoleTexte: {fileID: 0}
+  address: jbleau.dectim.ca
+  port: 8084
   onHoldClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 607948601}
-        m_TargetAssemblyTypeName: Touche, Assembly-CSharp
-        m_MethodName: UnTest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1620365615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,7 +1024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be6d12b3e985b54089605635b2cd62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laConsoleTexte: {fileID: 0}
+  address: jbleau.dectim.ca
+  port: 8084
   onHoldClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1169,7 +1120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2047059493
 GameObject:
@@ -1271,7 +1222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc2886892b2bc14ca07de20f8be43bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laConsoleTexte: {fileID: 0}
+  address: jbleau.dectim.ca
+  port: 8084
   onHoldClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1327,12 +1279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed334452a7c8e744893fb104e88a8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laConsoleTexte: {fileID: 0}
-  onHoldClick:
-    m_PersistentCalls:
-      m_Calls:
-      - {m_Target: {fileID: 607948599}, m_TargetAssemblyTypeName: , m_MethodName: , m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: , m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
 --- !u!114 &2103792904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1380,7 +1326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f2d8f8aabac6d4ca95233cae942a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laConsoleTexte: {fileID: 0}
+  address: jbleau.dectim.ca
+  port: 8084
   onHoldClick:
     m_PersistentCalls:
       m_Calls: []

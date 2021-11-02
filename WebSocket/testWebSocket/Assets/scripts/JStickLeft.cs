@@ -8,21 +8,18 @@ using UnityEngine.EventSystems;
 using WebSocketSharp;
 
 public class JStickLeft : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
-    IPointerUpHandler, IPointerExitHandler, IPointerEnterHandler,
-    IBeginDragHandler, IDragHandler, IEndDragHandler
+    IPointerUpHandler
 {
-    [SerializeField]
-    private Text laConsoleTexte;
-
+    public string address;
+    public string port; 
     WebSocket ws;
     private void Start()
     {
-        ws = new WebSocket("ws://jbleau.dectim.ca:8081");   //Changer l'address et le port
+        ws = new WebSocket("ws://" + address + ":" + port);    //Changer l'address et le port
         ws.Connect();
         ws.OnMessage += (sender, e) =>
         {
             Debug.Log("aaMessage Received from " + ((WebSocket)sender).Url + ", Data : " + e.Data);
-            laConsoleTexte.text = "Message Received from " + ((WebSocket)sender).Url + ", Data : " + e.Data;
         };
     }
 
@@ -34,29 +31,14 @@ public class JStickLeft : MonoBehaviour, IPointerDownHandler, IPointerClickHandl
             ws.Send("Go Left");
         }
     }
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        Debug.Log("Drag Begin");
-        
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        Debug.Log("Dragging: Move stick");
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        Debug.Log("Drag Ended");
-    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Clicked: " + eventData.pointerCurrentRaycast.gameObject.name);
     }
 
-private bool pointerDown;
-public UnityEvent onHoldClick;
+    private bool pointerDown;
+    public UnityEvent onHoldClick;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -70,16 +52,6 @@ public UnityEvent onHoldClick;
         pointerDown = false;
         Debug.Log("Mouse Up");
         ws.Send("Mouse Up: " + eventData.pointerCurrentRaycast.gameObject.name);
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("Mouse Enter");
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("Mouse Exit");
     }
     
 }

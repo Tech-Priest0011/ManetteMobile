@@ -8,21 +8,20 @@ using UnityEngine.EventSystems;
 using WebSocketSharp;
 
 public class JStest : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
-    IPointerUpHandler, IPointerExitHandler, IPointerEnterHandler,
+    IPointerUpHandler,
     IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [SerializeField]
-    private Text laConsoleTexte;
+    public string address;
+    public string port; 
 
     WebSocket ws;
     private void Start()
     {
-        ws = new WebSocket("ws://jbleau.dectim.ca:8081");   //Changer l'address et le port
+        ws = new WebSocket("ws://" + address + ":" + port);   //Changer l'address et le port
         ws.Connect();
         ws.OnMessage += (sender, e) =>
         {
             Debug.Log("aaMessage Received from " + ((WebSocket)sender).Url + ", Data : " + e.Data);
-            laConsoleTexte.text = "Message Received from " + ((WebSocket)sender).Url + ", Data : " + e.Data;
         };
     }
 
@@ -63,16 +62,6 @@ public class JStest : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
     public void OnPointerUp(PointerEventData eventData)
     {
         Debug.Log("Mouse Up: ");
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("Mouse Enter");
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("Mouse Exit");
     }
     
 }
